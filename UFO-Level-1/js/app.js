@@ -5,7 +5,7 @@ var tableData = data;
 
 // Use entered date range to find sightings
 var thead = d3.select("thead>tr");
-var headerKeys = Object.keys(data[0]);
+var headerKeys = Object.keys(tableData[0]);
 
 for (i=0; i<headerKeys.length; i++) {
   var row = thead.append("th")
@@ -13,7 +13,7 @@ for (i=0; i<headerKeys.length; i++) {
 }
  
 var tbody = d3.select("tbody");
-data.forEach(function(sitings) {
+tableData.forEach(function(sitings) {
       var row = tbody.append("tr");
       Object.entries(sitings).forEach(function([key, value]) {
       var cell = row.append("td");
@@ -51,3 +51,26 @@ function appendUFOUpdate () {
     var cell = row.append("td");
     cell.text(value);})
 };
+
+var searchDate = d3.select("#button-dateSearch");
+var formDate = d3.select("#form-dateSearch");
+
+searchDate.on("click", searchUFODate);
+formDate.on("submit", searchUFODate);
+
+function searchUFODate () {
+  d3.event.preventDefault();
+  console.log("An date search was made!");
+  var inputElement = d3.select("#text-dateSearch");
+  var inputValue = inputElement.property("value");
+  console.log(inputValue);
+};
+// function selectDate(tableData) {
+//   return person.age < 30;
+// }
+
+// // filter() uses the custom function as its argument
+// var youngSimpsons = simpsons.filter(selectYounger);
+
+// // Test
+// console.log(youngSimpsons);

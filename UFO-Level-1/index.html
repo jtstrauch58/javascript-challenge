@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
     />
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="static/style.css">
     <title>UFO!!</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
 
 <body>
-  <h1>Open the Chrome Inspector Console!</h1>
+  <div class="container">
+    <div class="row"></div>
+    <h1>UFO Sighting Database</h1>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -26,16 +29,13 @@
           <button id="button-newUFO" type="button" class="btn btn-default" name = "ufo-update-enter">Enter</button>
         </form>
       </div>
-    </div>
-  <div class="container">
-    <div class="row">
       <div class="col-md-6">
-        <form id="form">
+        <form id="form-dateSearch">
           <div class="form-group">
-            <label for="patient-form">Enter Search Date (MM/DD/YYYY) Format</label>
-            <input name="date-filter" type="text" placeholder="">
+            <label>Enter Search Date: MM/DD/YYYY</label>
+            <input class="form-control" id = "text-dateSearch" name="search-form" type="text">
           </div>
-          <button id="button" type="button" class="btn btn-default">Enter</button>
+          <button id="button-dateSearch" type="button" class="btn btn-default" name = "ufo-dateSearch-enter">Enter</button>
         </form>
       </div>
     </div>
