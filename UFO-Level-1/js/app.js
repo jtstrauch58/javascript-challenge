@@ -64,13 +64,18 @@ function searchUFODate () {
   var inputElement = d3.select("#text-dateSearch");
   var inputValue = inputElement.property("value");
   console.log(inputValue);
+  function searchDate (tableData) {
+    return tableData.datetime == inputValue;
+  }
+  var ufoDateData = tableData.filter(searchDate);
+  console.log(ufoDateData);
+
+  var theadDate = d3.select("#head-dateSearch");
+  var tr = theadDate.append("tr");
+  var headerKeys = Object.keys(tableData[0]);
+
+  for (i=0; i<headerKeys.length; i++) {
+    var row = thead.append("th")
+    row.text(headerKeys[i])
 };
-// function selectDate(tableData) {
-//   return person.age < 30;
-// }
-
-// // filter() uses the custom function as its argument
-// var youngSimpsons = simpsons.filter(selectYounger);
-
-// // Test
-// console.log(youngSimpsons);
+};
