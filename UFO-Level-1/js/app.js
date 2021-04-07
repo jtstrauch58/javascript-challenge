@@ -19,7 +19,7 @@ tableData.forEach(function(sitings) {
       var cell = row.append("td");
       cell.text(value);
       });
-    });
+});
 
 var update = d3.select("#button-newUFO");
 var form = d3.select("#form-newUFO");
@@ -70,12 +70,22 @@ function searchUFODate () {
   var ufoDateData = tableData.filter(searchDate);
   console.log(ufoDateData);
 
-  var theadDate = d3.select("#head-dateSearch");
-  var tr = theadDate.append("tr");
+  var thead = d3.select("#head-dateSearch");
+  var tr = thead.append("tr");
   var headerKeys = Object.keys(tableData[0]);
 
   for (i=0; i<headerKeys.length; i++) {
     var row = thead.append("th")
     row.text(headerKeys[i])
-};
+  };
+
+  var tbody = d3.select("#body-dateSearch");
+  console.log(tbody);
+  ufoDateData.forEach(function(sitings) {
+        var row = tbody.append("tr");
+        Object.entries(sitings).forEach(function([key, value]) {
+        var cell = row.append("td");
+        cell.text(value);
+        });
+  });
 };
