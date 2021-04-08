@@ -1,5 +1,10 @@
 
 
+body {
+    /* background-image: url("https://wallpapercave.com/wp/wp3474282.jpg"); */
+    /* background-color: #cccccc; */
+   }
+
 /* Data Table Styles */
 
 table {
@@ -7,7 +12,12 @@ table {
     margin-left: 1px;
     margin-top: 10px;
 }
-  
+
+tbody {
+    display:block; 
+    height:300px;
+    overflow-y:scroll;
+}
 td {
     padding: 1px;
     width: 40px;
